@@ -12,7 +12,7 @@ export class Menu {
   }
 }
 
-// Classe que representa um serviço da agência
+// serviço da agência
 export class Servico {
   constructor(titulo, descricao, imagem) {
     this.titulo = titulo;
@@ -32,7 +32,7 @@ export class Servico {
   }
 }
 
-// Classe que representa um depoimento
+// depoimento
 export class Depoimento {
   constructor(texto, autor) {
     this.texto = texto;
@@ -50,7 +50,7 @@ export class Depoimento {
   }
 }
 
-// Classe responsável pelo formulário de contato
+// Classe responsável 
 export class FormularioContato {
   constructor(formSelector, feedbackSelector) {
     this.form = document.querySelector(formSelector);
