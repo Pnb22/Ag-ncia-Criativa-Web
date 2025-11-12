@@ -1,28 +1,69 @@
-import { Menu, Servico, Depoimento, FormularioContato } from "./classes.js";
-
-// Inicializa o menu responsivo
-new Menu(".menu-toggle", ".menu ul");
-
-// Lista de serviços
+/* filepath: c:\Users\arthu\Platformer game\Ag-ncia-Criativa-Web\js\app.js */
+// Dados dos serviços
 const servicos = [
-  new Servico("Design Gráfico", "Criação de identidades visuais modernas e impactantes.", "https://via.placeholder.com/300x200"),
-  new Servico("Desenvolvimento Web", "Sites e plataformas otimizadas para todos os dispositivos.", "https://via.placeholder.com/300x200"),
-  new Servico("Branding", "Fortalecemos a identidade da sua marca para gerar conexões reais.", "https://via.placeholder.com/300x200")
+  { id: 1, titulo: 'Web Design', descricao: 'Design responsivo e moderno para sua marca' },
+  { id: 2, titulo: 'Desenvolvimento Web', descricao: 'Aplicações web rápidas e escaláveis' },
+  { id: 3, titulo: 'SEO & Marketing', descricao: 'Estratégias para aumentar sua visibilidade' },
+  { id: 4, titulo: 'Branding', descricao: 'Identidade visual profissional e impactante' }
 ];
 
-// Renderiza os serviços dinamicamente
-const listaServicos = document.getElementById("lista-servicos");
-servicos.forEach(servico => listaServicos.appendChild(servico.render()));
-
-// Lista de depoimentos
 const depoimentos = [
-  new Depoimento("A Agência Criativa Web transformou nossa presença digital!", "Ana Souza, CEO da Marca X"),
-  new Depoimento("Eles entenderam exatamente o que precisávamos. Nosso site ficou impecável!", "Lucas Pereira, Empreendedor")
+  { id: 1, texto: 'A agência entregou exatamente o que esperávamos!', autor: 'João Silva' },
+  { id: 2, texto: 'Profissionais dedicados e muito criativos.', autor: 'Maria Santos' },
+  { id: 3, texto: 'Melhorou muito nossos resultados online.', autor: 'Pedro Costa' }
 ];
 
-// Renderiza os depoimentos dinamicamente
-const listaDepoimentos = document.getElementById("lista-depoimentos");
-depoimentos.forEach(dep => listaDepoimentos.appendChild(dep.render()));
+// Função para renderizar serviços
+function renderServiços() {
+  const container = document.getElementById('lista-servicos');
+  container.innerHTML = servicos.map(servico => `
+    <div class="card-servico">
+      <h3>${servico.titulo}</h3>
+      <p>${servico.descricao}</p>
+    </div>
+  `).join('');
+}
 
-// Inicializa o formulário de contato
-new FormularioContato("#form-contato", "#feedback");
+// Função para renderizar depoimentos
+function renderDepoimentos() {
+  const container = document.getElementById('lista-depoimentos');
+  container.innerHTML = depoimentos.map(depo => `
+    <div class="depoimento">
+      <p>"${depo.texto}"</p>
+      <strong>— ${depo.autor}</strong>
+    </div>
+  `).join('');
+}
+
+// Função para toggle do menu mobile
+function toggleMenu() {
+  const menu = document.querySelector('.menu');
+  menu.classList.toggle('ativo');
+}
+
+// Função para submeter formulário
+function handleForm(e) {
+  e.preventDefault();
+  const nome = document.getElementById('nome').value;
+  const email = document.getElementById('email').value;
+  const feedback = document.getElementById('feedback');
+  
+  if (nome && email) {
+    feedback.textContent = 'Mensagem enviada com sucesso!';
+    feedback.classList.remove('erro');
+    feedback.classList.add('sucesso');
+    document.getElementById('form-contato').reset();
+  } else {
+    feedback.textContent = 'Preencha todos os campos!';
+    feedback.classList.remove('sucesso');
+    feedback.classList.add('erro');
+  }
+}
+
+// Inicialização
+document.addEventListener('DOMContentLoaded', () => {
+  renderServiços();
+  renderDepoimentos();
+  document.querySelector('.menu-toggle').addEventListener('click', toggleMenu);
+  document.getElementById('form-contato').addEventListener('submit', handleForm);
+});
