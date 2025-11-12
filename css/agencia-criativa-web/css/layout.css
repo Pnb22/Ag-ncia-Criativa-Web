@@ -1,0 +1,36 @@
+:root {
+  --espaco-header: 60px;
+  --espaco-footer: 40px;
+}
+
+.header {
+  background: var(--cor-primaria);
+  padding: 1rem 5vw;
+  color: white;
+}
+
+.footer {
+  background: var(--cor-secundaria);
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.section {
+  padding: var(--espacamento) 0;
+}
