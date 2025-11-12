@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agência Criativa Web</title>
+  <link rel="stylesheet" href="estilos.css" />
+</head>
+<body>
+  
+  <header class="cabecalho">
+    <div class="logo">Agência <span>Criativa Web</span></div>
+    <button class="menu-toggle" aria-label="Abrir menu">☰</button>
+    <nav class="menu">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#sobre">Sobre Nós</a></li>
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#depoimentos">Depoimentos</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  
+  <section id="home" class="banner">
+    <div class="banner-texto">
+      <h1>Transformamos ideias em experiências digitais incríveis</h1>
+      <p>Design, tecnologia e criatividade para impulsionar sua marca no mundo digital.</p>
+      <a href="#contato" class="btn">Entre em contato</a>
+    </div>
+  </section>
+
+  
+  <section id="sobre" class="sobre">
+    <h2>Sobre Nós</h2>
+    <p>
+      Somos uma agência apaixonada por design e inovação. Nosso time une
+      criatividade e estratégia para desenvolver soluções digitais que geram impacto
+      e resultados para nossos clientes.
+    </p>
+  </section>
+
+  
+  <section id="servicos" class="servicos">
+    <h2>Serviços</h2>
+    <div class="grid-servicos" id="lista-servicos">
+     
+    </div>
+  </section>
+
+  
+  <section id="depoimentos" class="depoimentos">
+    <h2>Depoimentos</h2>
+    <div class="flex-depoimentos" id="lista-depoimentos">
+    
+    </div>
+  </section>
+
+  
+  <section id="contato" class="contato">
+    <h2>Fale Conosco</h2>
+    <div class="grid-contato">
+      <div class="info-contato">
+        <p><strong>Endereço:</strong> Rua Criatividade, 123 - São Paulo, SP</p>
+        <p><strong>Telefone:</strong> (11) 99999-9999</p>
+        <p><strong>E-mail:</strong> contato@agenciacriativaweb.com</p>
+      </div>
+      <form id="form-contato" class="form-contato">
+        <input type="text" id="nome" placeholder="Seu nome" required />
+        <input type="email" id="email" placeholder="Seu e-mail" required />
+        <textarea id="mensagem" placeholder="Sua mensagem" required></textarea>
+        <button type="submit" class="btn">Enviar Mensagem</button>
+      </form>
+    </div>
+    <div id="feedback"></div>
+  </section>
+
+  <footer class="rodape">
+    <p>© 2025 Agência Criativa Web — Todos os direitos reservados.</p>
+  </footer>
+
+  <script type="module" src="./js/app.js"></script>
+</body>
+</html>
