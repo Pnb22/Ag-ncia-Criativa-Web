@@ -1,8 +1,8 @@
 :root {
-  --cor-primaria: #30537a;
-  --cor-secundaria: #b30b0b;
+  --cor-primaria: #2596d8;
+  --cor-secundaria: #000000;
   --cor-fundo: #f8f9fa;
-  --cor-texto: #333;
+  --cor-texto: #000000;
   --espacamento: 1.5rem;
   --fonte-principal: "Poppins", Arial, sans-serif;
 }
