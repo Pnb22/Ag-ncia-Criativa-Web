@@ -32,57 +32,85 @@ img {
 }
 
 
+/* ====== HEADER ====== */
 .header {
-  background-color: var(--cor-branca);
-  box-shadow: var(--sombra-suave);
+  background-color: #ffffff;
+  color: #222;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 5%;
   position: sticky;
   top: 0;
-  z-index: 100;
-}
-
-.header__content {
-  width: min(90%, 1200px);
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1rem 0;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
 .header__logo {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-weight: 700;
-  color: var(--cor-primaria);
+  color: #222;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-.header__nav-list {
+.header__nav {
   display: flex;
-  list-style: none;
   gap: 2rem;
 }
 
-.header__nav-link {
+.header__nav a {
   text-decoration: none;
-  color: var(--cor-secundaria);
+  color: #333;
   font-weight: 500;
-  transition: var(--transicao);
-  position: relative;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
 }
 
-.header__nav-link::after {
-  content: "";
-  width: 0%;
-  height: 2px;
-  background: var(--cor-primaria);
-  position: absolute;
-  bottom: -5px;
-  left: 0;
-  transition: var(--transicao);
+.header__nav a:hover {
+  color: #0077ff;
+  border-bottom: 2px solid #0077ff;
 }
 
-.header__nav-link:hover::after {
-  width: 100%;
+/* ====== MENU RESPONSIVO ====== */
+.header__menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
 }
+
+.header__menu-toggle span {
+  height: 3px;
+  width: 25px;
+  background: #333;
+  margin-bottom: 4px;
+  border-radius: 5px;
+}
+
+/* ====== RESPONSIVIDADE ====== */
+@media (max-width: 768px) {
+  .header__nav {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: #fff;
+    flex-direction: column;
+    width: 200px;
+    gap: 1.5rem;
+    padding: 2rem;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .header__nav.active {
+    transform: translateX(0);
+  }
+
+  .header__menu-toggle {
+    display: flex;
+  }
+}
+
 
 
 .banner {
