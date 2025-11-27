@@ -1,0 +1,16 @@
+{
+  "name": "scss-project",
+  "version": "1.0.0",
+  "description": "A project that converts existing CSS files into SCSS format with a structured setup including responsive design and namespaces.",
+  "main": "src/styles/main.scss",
+  "scripts": {
+    "build": "node-sass src/styles/main.scss dist/styles.css",
+    "watch": "node-sass src/styles/main.scss dist/styles.css --watch"
+  },
+  "dependencies": {
+    "node-sass": "^6.0.0"
+  },
+  "devDependencies": {},
+  "author": "",
+  "license": "ISC"
+}

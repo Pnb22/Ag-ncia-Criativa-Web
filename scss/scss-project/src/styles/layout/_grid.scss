@@ -1,0 +1,49 @@
+// This file contains grid layout styles for structuring content.
+
+$grid-columns: 12;
+$grid-gutter: 1.5rem;
+
+@mixin grid-container {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: $grid-gutter;
+  padding-left: $grid-gutter;
+}
+
+@mixin grid-column($size) {
+  flex: 0 0 (100% / $grid-columns * $size);
+  max-width: (100% / $grid-columns * $size);
+}
+
+.grid {
+  @include grid-container;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.grid-item {
+  @include grid-column(1); // Default to 1 column
+  padding: $grid-gutter;
+
+  @for $i from 2 through $grid-columns {
+    &--#{$i} {
+      @include grid-column($i);
+    }
+  }
+}
+
+// Responsive adjustments
+@import '../mixins/_breakpoints';
+
+@include breakpoint('tablet') {
+  .grid-item {
+    @include grid-column(2); // Default to 2 columns on tablet
+  }
+}
+
+@include breakpoint('desktop') {
+  .grid-item {
+    @include grid-column(3); // Default to 3 columns on desktop
+  }
+}

@@ -1,0 +1,49 @@
+// This file contains styles specific to the header layout.
+
+$header-background-color: #f8f9fa;
+$header-text-color: #343a40;
+$header-padding: 1rem;
+
+.header {
+  background-color: $header-background-color;
+  color: $header-text-color;
+  padding: $header-padding;
+
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  .nav {
+    display: flex;
+    justify-content: space-around;
+
+    a {
+      color: $header-text-color;
+      text-decoration: none;
+      padding: 0.5rem;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+// Responsive styles
+@include respond-to(tablet) {
+  .header {
+    padding: 1.5rem;
+
+    .nav {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}
+
+@include respond-to(desktop) {
+  .header {
+    padding: 2rem;
+  }
+}

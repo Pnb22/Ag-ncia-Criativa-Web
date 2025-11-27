@@ -1,0 +1,42 @@
+@import '../variables/colors';
+@import '../variables/typography';
+@import '../variables/spacing';
+@import '../mixins/breakpoints';
+@import '../mixins/utilities';
+
+.mobile {
+  // Mobile specific styles
+  font-size: $font-size-small;
+  padding: $spacing-small;
+
+  @include respond-to(sm) {
+    font-size: $font-size-medium;
+    padding: $spacing-medium;
+  }
+
+  .header {
+    @include flex-center;
+    padding: $spacing-small;
+  }
+
+  .footer {
+    @include flex-center;
+    padding: $spacing-small;
+  }
+
+  .button {
+    width: 100%;
+    padding: $spacing-small;
+    font-size: $font-size-small;
+  }
+
+  .card {
+    margin: $spacing-small;
+    padding: $spacing-small;
+  }
+
+  .form {
+    margin: $spacing-small;
+    padding: $spacing-small;
+  }
+}

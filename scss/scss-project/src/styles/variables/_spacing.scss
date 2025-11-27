@@ -1,0 +1,16 @@
+$spacing: (
+  small: 0.5rem,
+  medium: 1rem,
+  large: 2rem,
+  xlarge: 3rem,
+  xxlarge: 4rem
+);
+
+@mixin spacing($size) {
+  @if map-has-key($spacing, $size) {
+    @return map-get($spacing, $size);
+  } @else {
+    @warn "Spacing size `#{$size}` not found in spacing map.";
+    @return null;
+  }
+}

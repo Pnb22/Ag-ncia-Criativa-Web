@@ -1,0 +1,23 @@
+@media (min-width: 768px) and (max-width: 1024px) {
+  // Tablet specific styles go here
+
+  body {
+    font-size: 1.2rem; // Example of adjusting font size for tablet
+  }
+
+  .container {
+    padding: 20px; // Adjust padding for tablet
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 20px; // Adjust header padding for tablet
+  }
+
+  .card {
+    margin: 15px; // Adjust card margin for tablet
+  }
+
+  // Add more tablet-specific styles as needed
+}
